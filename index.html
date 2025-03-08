@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Peikai Li</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #203864;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: #666;
+        }
+        
+        /* Header and Navigation */
+        header {
+            display: flex;
+            flex-direction: column;
+            padding: 40px 0 20px;
+        }
+        
+        .header-title {
+            margin-bottom: 10px;
+        }
+        
+        .header-title h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #202020;
+        }
+        
+        .header-subtitle {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        
+        nav {
+            margin-top: 40px;
+            background-color: #112444;
+            align-self: flex-end;
+            width: 60%;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: space-around;
+        }
+        
+        nav li {
+            padding: 15px 0;
+        }
+        
+        nav a {
+            color: white;
+            font-weight: 400;
+            padding: 15px 20px;
+            letter-spacing: 0.5px;
+        }
+        
+        nav a:hover {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: flex;
+            margin: 50px 0;
+            gap: 50px;
+        }
+        
+        .profile-image {
+            width: 300px;
+            height: auto;
+            flex-shrink: 0;
+        }
+        
+        .profile-text {
+            flex-grow: 1;
+            padding-top: 10px;
+        }
+        
+        .profile-heading {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
+        .profile-text p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        
+        /* Sections */
+        section {
+            margin-bottom: 80px;
+        }
+        
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 30px;
+            color: #202020;
+        }
+        
+        /* Research Interests */
+        .research-interests ul {
+            list-style-position: inside;
+            margin-left: 20px;
+        }
+        
+        .research-interests li {
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        
+        /* Publications */
+        .publications-list {
+            margin-top: 20px;
+        }
+        
+        .pub-item {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .pub-title {
+            font-weight: 500;
+            margin-bottom: 5px;
+            font-size: 1.05rem;
+        }
+        
+        .pub-authors {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+        
+        .pub-journal {
+            margin-bottom: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+        .pub-link {
+            color: #203864;
+            font-size: 0.9rem;
+        }
+        
+        /* Teaching */
+        .teaching-category {
+            margin-bottom: 40px;
+        }
+        
+        .teaching-category h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .teaching-list {
+            list-style-type: none;
+        }
+        
+        .teaching-item {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .teaching-item::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #203864;
+        }
+        
+        .teaching-title {
+            font-weight: 500;
+        }
+        
+        .teaching-details {
+            color: #666;
+            font-size: 0.95rem;
+            margin-top: 5px;
+        }
+        
+        /* Software & Tools */
+        .software-item {
+            margin-bottom: 30px;
+        }
+        
+        .software-title {
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        
+        .software-description {
+            margin-bottom: 10px;
+        }
+        
+        .software-link {
+            display: inline-block;
+            margin-top: 5px;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .skill-item {
+            background-color: #f5f5f5;
+            padding: 8px 15px;
+            border-radius: 3px;
+            font-size: 0.9rem;
+        }
+        
+        /* Contact */
+        .contact-info {
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+        
+        .contact-label {
+            font-weight: 500;
+            display: inline-block;
+            width: 80px;
+        }
+        
+        /* Footer */
+        footer {
+            border-top: 1px solid #eee;
+            padding: 30px 0;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 50px;
+            text-align: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            nav {
+                width: 100%;
+                align-self: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .profile-image {
+                margin-bottom: 30px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+            }
+            
+            nav li {
+                flex-basis: 33.333%;
+                text-align: center;
+            }
+            
+            .research-interests ul {
+                text-align: left;
+            }
+            
+            .contact-label {
+                width: auto;
+                margin-right: 10px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-title h1 {
+                font-size: 2rem;
+            }
+            
+            nav li {
+                flex-basis: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-title">
+            <h1>Peikai Li</h1>
+            <div class="header-subtitle">Organizational Psychology | University of Leeds</div>
+            <div class="header-subtitle">Leeds University Business School</div>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="#about">HOME</a></li>
+                <li><a href="#publications">PUBLICATIONS</a></li>
+                <li><a href="#teaching">TEACHING</a></li>
+                <li><a href="#research">RESEARCH</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="main-content" id="about">
+        <img src="profile.jpg" alt="Dr. Peikai Li" class="profile-image">
+        
+        <div class="profile-text">
+            <h2 class="profile-heading">How do work characteristics shape employee well-being and performance?</h2>
+            
+            <p>I am a Lecturer in Organizational Psychology at the University of Leeds. My research focuses on organizational behavior, including leadership, stress management, creativity, newcomer socialization, and workplace well-being.</p>
+            
+            <p>I conduct research on how employees appraise workplace demands as either challenges or hindrances. This work demonstrates that appraisals can change over time and significantly impact employee wellbeing and performance. My research bridges theoretical insights with practical applications, helping organizations create healthier and more productive work environments.</p>
+            
+            <p>I hold a Ph.D. in Organizational Psychology from Utrecht University, an M.A. in Applied Psychology from Renmin University of China, and a B.A. in Business Administration from North China Institute of Science and Technology.</p>
+            
+            <p>Advanced Skills: Mplus, R, SPSS, conducting advanced Meta-analysis (e.g., multilevel meta-analysis, meta mediation analysis), SEM, Multi-level or longitudinal data analysis (e.g., latent transition analysis, cross-lagged panel analysis).</p>
+        </div>
+    </div>
+    
+    <section id="research" class="research-interests">
+        <h2 class="section-title">Research Interests</h2>
+        
+        <ul>
+            <li>Leadership (individual, team, and country level)</li>
+            <li>Stress management and workplace well-being</li>
+            <li>Challenge-hindrance framework and appraisal processes</li>
+            <li>Creativity and innovation in organizations</li>
+            <li>Newcomer socialization</li>
+            <li>Meta-analysis methodologies</li>
+        </ul>
+        
+        <div style="margin-top: 40px;">
+            <h3 style="font-size: 1.2rem; font-weight: 500; margin-bottom: 20px;">Current Projects</h3>
+            
+            <p><strong>Leadership Meta Essentials (LME):</strong> As Project Manager, I lead this initiative to build a comprehensive meta-analysis database of leadership studies. We've searched over 78,000 articles and organized more than 200 researchers for coding and screening. <a href="https://osf.io/5yhmk/">Visit Project</a></p>
+            
+            <p style="margin-top: 20px;"><strong>Chinese Psychometric Association:</strong> As co-founder and Editor-in-Chief, I manage this WeChat platform with over 66,000 followers where we share statistics tutorials and research experiences. <a href="https://osf.io/cy5gq/">Learn More</a></p>
+        </div>
+    </section>
+    
+    <section id="publications">
+        <h2 class="section-title">Selected Publications</h2>
+        
+        <div class="publications-list">
+            <div class="pub-item">
+                <div class="pub-title">Are bad leaders indeed bad for employees? A Meta-Analysis of Longitudinal Studies Between Destructive Leadership and Employee Outcomes</div>
+                <div class="pub-authors">Li, P., Yin, K., Damen, T., Shi, J., & Taris, T.W. (2023)</div>
+                <div class="pub-journal">Journal of Business Ethics (ABS3, FT50)</div>
+                <a href="https://doi.org/10.1007/s10551-023-05449-2" class="pub-link">View Publication</a>
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Antecedents and outcomes of work-related flow: A meta-analysis</div>
+                <div class="pub-authors">Liu, W., Lu, H. & Li, P., van der Linden, D., & Bakker, A. (2023)</div>
+                <div class="pub-journal">Journal of Vocational Behavior (ABS4)</div>
+                <a href="https://doi.org/10.1016/j.jvb.2023.103891" class="pub-link">View Publication</a>
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Today's challenge may be tomorrow's hindrance (and vice versa): Longitudinal changes in employee's appraisals of job demands and their outcomes</div>
+                <div class="pub-authors">Li, P., Taris, T.W., & Peeters, M.C.W. (2022)</div>
+                <div class="pub-journal">Journal of Occupational and Organizational Psychology (ABS4)</div>
+                <a href="https://doi.org/10.1111/joop.12384" class="pub-link">View Publication</a>
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Creative performance pressure as a double-edged sword for creativity: The role of appraisals and resources</div>
+                <div class="pub-authors">Liu, F., Li, P., Taris, T.W., & Peeters, M.C.W. (2022)</div>
+                <div class="pub-journal">Human Resource Management (ABS4, FT50)</div>
+                <a href="https://doi.org/10.1002/hrm.22116" class="pub-link">View Publication</a>
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Country differences in the relationship between leadership and employee engagement: A meta-analysis</div>
+                <div class="pub-authors">Li, P., Sun, J-M., Taris, T.W., Xing, L., & Peeters, M.C.W. (2021)</div>
+                <div class="pub-journal">The Leadership Quarterly (ABS4)</div>
+                <a href="https://doi.org/10.1016/j.leaqua.2020.101458" class="pub-link">View Publication</a>
+            </div>
+        </div>
+        
+        <p style="margin-top: 30px;">
+            <a href="https://scholar.google.nl/citations?hl=en&pli=1&user=7ez94Y8AAAAJ">View Complete Publication List on Google Scholar</a>
+        </p>
+    </section>
+    
+    <section id="teaching">
+        <h2 class="section-title">Teaching</h2>
+        
+        <div class="teaching-category">
+            <h3>University Courses</h3>
+            <ul class="teaching-list">
+                <li class="teaching-item">
+                    <div class="teaching-title">Leadership in Organizations</div>
+                    <div class="teaching-details">Leeds University Business School • Module Leader • 300+ students</div>
+                </li>
+                <li class="teaching-item">
+                    <div class="teaching-title">Advanced Behavioural Research Design and Analysis</div>
+                    <div class="teaching-details">Leeds University Business School • Module Leader</div>
+                </li>
+                <li class="teaching-item">
+                    <div class="teaching-title">Organizational Behavior</div>
+                    <div class="teaching-details">Leeds University Business School</div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="teaching-category">
+            <h3>Recent Workshops</h3>
+            <ul class="teaching-list">
+                <li class="teaching-item">
+                    <div class="teaching-title">Meta-Analysis of Related Research — From Basics to Mastery</div>
+                    <div class="teaching-details">August 21, 2024 • Online Course • 21+ Participants • Rating: 4.5/5</div>
+                </li>
+                <li class="teaching-item">
+                    <div class="teaching-title">Mplus — From Basics to Mastery</div>
+                    <div class="teaching-details">August 17, 2024 • Online Course • 20+ Participants • Rating: 4.75/5</div>
+                </li>
+                <li class="teaching-item">
+                    <div class="teaching-title">Data Analysis Using the Experience Sampling Method</div>
+                    <div class="teaching-details">August 10, 2024 • Online Course • 24+ Participants • Rating: 4.67/5</div>
+                </li>
+                <li class="teaching-item">
+                    <div class="teaching-title">Writing and Publishing English Academic Papers</div>
+                    <div class="teaching-details">August 6, 2024 • Online Course • 10+ Participants • Rating: 4.4/5</div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="software">
+        <h2 class="section-title">Software & Skills</h2>
+        
+        <div class="software-item">
+            <div class="software-title">MetaRho: A Shiny App for Meta-Analysis of Correlation Coefficients</div>
+            <div class="software-description">I developed this Shiny application to help researchers conduct meta-analyses of correlation coefficients with ease. Version 1.2 was released in February 2025.</div>
+            <a href="https://peikai-li.shinyapps.io/MetaRho/" class="software-link">Try MetaRho</a>
+        </div>
+        
+        <h3 style="font-size: 1.2rem; font-weight: 500; margin: 30px 0 20px;">Research Skills</h3>
+        <div class="skills-list">
+            <span class="skill-item">Mplus</span>
+            <span class="skill-item">R</span>
+            <span class="skill-item">SPSS</span>
+            <span class="skill-item">Meta-analysis</span>
+            <span class="skill-item">SEM</span>
+            <span class="skill-item">Multi-level analysis</span>
+            <span class="skill-item">Cross-lagged panel analysis</span>
+            <span class="skill-item">Latent transition analysis</span>
+            <span class="skill-item">Multilevel meta-analysis</span>
+            <span class="skill-item">Meta-mediation analysis</span>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        
+        <div class="contact-info">
+            <p><span class="contact-label">Email:</span> <a href="mailto:pk.li@hotmail.com">pk.li@hotmail.com</a></p>
+            <p><span class="contact-label">Phone:</span> (+44) 07551308827 / (+86) 15201259007</p>
+            <p><span class="contact-label">Address:</span> Flat 312, C Q the Gardens, 2, St Johns Road, Leeds, LS3 1BL, England</p>
+            <p style="margin-top: 20px;"><span class="contact-label">Google Scholar:</span> <a href="https://scholar.google.nl/citations?hl=en&pli=1&user=7ez94Y8AAAAJ">View Profile</a></p>
+            <p><span class="contact-label">OSF:</span> <a href="https://osf.io/5yhmk/">Leadership Meta Essentials</a></p>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Dr. Peikai Li. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
