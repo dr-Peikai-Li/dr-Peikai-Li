@@ -15,29 +15,31 @@ body {
 
 /* Header Styling */
 header {
-  background-color: #2c3e50;
-  color: #fff;
-  padding: 30px 20px;
+  background-color: white;
+  color: #333;
+  padding: 40px 0 20px;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-bottom: 1px solid #eee;
 }
 
 header h1 {
-  font-size: 2.4em;
-  margin-bottom: 5px;
+  font-size: 2.5em;
+  margin-bottom: 10px;
   font-weight: 700;
 }
 
 header p {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   font-style: italic;
-  color: #ecf0f1;
+  color: #555;
   font-size: 1.2em;
 }
 
+/* Navigation */
 nav {
-  background-color: #34495e;
-  padding: 10px 0;
+  background-color: white;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
 }
 
 nav ul {
@@ -45,49 +47,62 @@ nav ul {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 nav ul li a {
   text-decoration: none;
-  color: #ecf0f1;
+  color: #333;
   font-weight: 500;
-  padding: 5px 10px;
-  border-radius: 3px;
-  transition: all 0.3s ease;
+  font-size: 1.1em;
+  padding: 5px 0;
+  position: relative;
 }
 
-nav ul li a:hover {
-  background-color: #2980b9;
-  color: white;
+nav ul li a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #333;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover:after {
+  width: 100%;
 }
 
 /* Main Content Styling */
 main {
-  padding: 30px 20px;
-  max-width: 1000px;
+  padding: 40px 20px;
+  max-width: 1200px;
   margin: auto;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  border-radius: 5px;
 }
 
 section {
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
 h2 {
-  margin-bottom: 20px;
-  font-size: 2em;
-  color: #2c3e50;
-  border-bottom: 3px solid #3498db;
+  margin-bottom: 25px;
+  font-size: 1.8em;
+  color: #333;
+  border-bottom: 2px solid #eee;
   padding-bottom: 10px;
 }
 
 h3 {
-  margin: 20px 0 15px;
-  font-size: 1.5em;
-  color: #2980b9;
+  margin: 25px 0 15px;
+  font-size: 1.4em;
+  color: #444;
+}
+
+p {
+  margin-bottom: 15px;
 }
 
 ul {
@@ -97,150 +112,58 @@ ul {
 }
 
 li {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 /* Publications Styling */
-#publications ul {
+.publication-list {
   list-style: none;
   margin-left: 0;
 }
 
-#publications li {
-  padding: 15px;
-  border-left: 3px solid #3498db;
-  background-color: #f8f9fa;
+.publication-list li {
+  padding-bottom: 15px;
   margin-bottom: 15px;
-  transition: all 0.3s ease;
+  border-bottom: 1px solid #eee;
 }
 
-#publications li:hover {
-  background-color: #e9f7fe;
-  transform: translateX(5px);
+.publication-list li:last-child {
+  border-bottom: none;
 }
 
-/* Google Scholar Stats */
+/* Scholar Stats */
 .scholar-stats {
-  background-color: #e9f7fe;
-  padding: 15px;
+  margin: 20px 0;
+}
+
+/* Contact Info */
+.contact-info {
+  background-color: #f5f5f5;
+  padding: 20px;
   border-radius: 5px;
-  margin: 20px 0;
-  display: inline-block;
-}
-
-.scholar-stats p {
-  font-weight: bold;
-}
-
-/* Research Interests */
-.research-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 15px 0;
-}
-
-.research-tag {
-  background-color: #3498db;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 0.9em;
-}
-
-/* Workshop Table */
-.workshop-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-}
-
-.workshop-table th, .workshop-table td {
-  padding: 12px 15px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-.workshop-table th {
-  background-color: #3498db;
-  color: white;
-}
-
-.workshop-table tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-.workshop-table tr:hover {
-  background-color: #e9f7fe;
-}
-
-/* Contact Form */
-.contact-form {
-  max-width: 500px;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.form-group input, .form-group textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.form-group textarea {
-  height: 150px;
-}
-
-.btn {
-  background-color: #3498db;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1em;
-  transition: background-color 0.3s;
-}
-
-.btn:hover {
-  background-color: #2980b9;
 }
 
 /* Footer Styling */
 footer {
-  background-color: #2c3e50;
-  color: #ecf0f1;
+  background-color: #f5f5f5;
   text-align: center;
   padding: 20px;
+  border-top: 1px solid #eee;
   font-size: 0.9em;
-}
-
-footer a {
-  color: #3498db;
+  margin-top: 40px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    gap: 15px;
   }
   
   header h1 {
     font-size: 2em;
   }
   
-  main {
-    padding: 20px 15px;
+  header p {
+    font-size: 1em;
   }
 }
